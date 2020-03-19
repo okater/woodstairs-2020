@@ -1,0 +1,44 @@
+:root {
+    --color-primary: rgb(139, 71, 38);
+    --color-primary-light: rgb(165, 84, 45);
+    --color-primary-dark: rgb(125, 63, 34);
+
+    --color-background-primary: #FFE4B5;
+
+    --color-container-1: #914800;
+    --color-container-2: #b4814f;
+    --color-container-3: #d6bb9f;
+    --color-container-4: #f9f4f0;
+
+    --color-brown-red: rgb(80, 20, 8);
+
+    --color-border-menu: #793706;
+
+    --color-hover-menu: rgb(196, 87, 47);
+
+    --color-h2: #222;
+}
+
+$color-primary: rgb(139, 71, 38);
+$color-primary-light: lighten($color-primary, 10%);
+$color-primary-dark: darken($color-primary, 10%);
+
+$color-grey-dark: grey;
+
+@keyframes animatedPriceBackground {
+    0% {
+        background-position-x: 0%;
+    }
+    40% {
+        background-position-x: 0%;
+    }
+    50% {
+        background-position-x: 100%;
+    }
+    90% {
+        background-position-x: 100%;
+    }
+    100% {
+        background-position-x: 0%;
+    }
+  }

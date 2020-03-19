@@ -1,0 +1,84 @@
+.content {
+    display: flex;
+    background-image: url(../images/wood.jpg);
+    overflow: hidden;
+    max-height: 90rem;
+}
+
+.main {
+    overflow: hidden;
+    //scroll-snap-type: y mandatory;
+    //scroll-behavior: smooth;
+}
+
+.main > section {
+    min-height: 95rem;
+    position: relative;
+    //scroll-snap-align: start;
+}
+
+
+.carousel {
+
+    &__photos {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+        //height: 20rem;
+        background-image: linear-gradient(
+            to top right,
+            var(--color-background-primary) 0%,
+            var(--color-primary-dark) 100%
+        );
+        background-size: 10px 10px;
+
+        & div {
+            width: 220px;
+            height: 173px;
+            background-image: url(../images/gallery.jpg);
+        }
+
+        &--2 {
+            background-position-x: 220px;
+        }
+        &--3 {
+            background-position-x: 440px;
+        }
+        &--4 {
+            background-position-x: 660px;
+        }
+        
+    }
+}
+
+h2 {
+    font-size: 2.5rem;
+    color: var(--color-h2);
+    font-style: italic;
+    font-family:"Trebuchet MS", Arial, Helvetica, sans-serif;
+    text-decoration: underline;
+    text-align:center;
+    padding:1rem 0;
+    text-shadow:#000 1px 1px 1px;
+    line-height: normal;
+}
+
+h3 {
+    font-size: 1.8rem;
+    font-weight: 700;
+    text-align: center;
+    margin: 1.5rem 0;
+}
+
+p {
+    font-size: 1.6rem;
+	font-family:"Trebuchet MS", Arial, Helvetica, sans-serif;
+	text-indent: 2rem;
+	text-align: justify;
+    margin-bottom: 1rem;
+    line-height: 2.4rem;
+}
+
+.main {
+    display: inline-block;
+}
