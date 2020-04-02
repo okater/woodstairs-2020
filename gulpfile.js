@@ -16,7 +16,7 @@ function styles() {
             .on('error', sass.logError)
             //.pipe(postcss([autoprefixer(), cssnano()]))
             //.pipe(sourcemaps.write())
-            .pipe(gulp.dest('css'))
+            .pipe(gulp.dest('./'))
             .pipe(browserSync.stream())
     );
 }

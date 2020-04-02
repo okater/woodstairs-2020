@@ -190,7 +190,7 @@
         & div {
             width: 220px;
             height: 173px;
-            background-image: url(../images/gallery.jpg);
+            background-image: url(images/gallery.jpg);
         }
 
         &--2 {
@@ -214,7 +214,7 @@
         @include respond(upto504) {
             width: 100%;
             padding-top: 75%;
-            background-image: url(../images/gallery-phone.jpg);
+            background-image: url(images/gallery-phone.jpg);
             background-size: 400% 100%;
             animation: animateHeaderBackground 15s linear infinite;
 
@@ -297,12 +297,13 @@
     p {
         padding: 0;
         margin: 0;
+        text-indent: 0;
     }
 }
 
 address {
     font-style: normal;
-    text-indent: 2rem;
+    text-indent: 0;
 }
 
 .price__description .landing {

@@ -39,7 +39,7 @@
             height: 16.5rem;
             box-shadow: 1px 1px 3px black;
             border-radius: .5rem;
-            background-image: url(../images/gallery-right.jpg);
+            background-image: url(images/gallery-right.jpg);
         }
 
         &-2 {
@@ -60,7 +60,7 @@
     &__pages {
         text-align: center;
         overflow: hidden;
-        width: var(--size-photo-container);
+        width: var(--size-photo-container-width);
         margin: 0 auto;
 
         @include respond(gallery) {
@@ -75,9 +75,21 @@
     &__container {
         display: flex;
         overflow-x: auto;
+        overflow-y: hidden;
         scroll-snap-type: x mandatory;
         scroll-behavior: smooth;
         -webkit-overflow-scrolling: touch;
+        min-height: var(--size-photo-container-min-height);
+
+        @include respond(gallery) {
+            min-height: var(--size-photo-container-min-height-for-gallery);
+        }
+        @include respond(below768) {
+            min-height: var(--size-photo-container-min-height-for-below768);
+        }
+        @include respond(upto504) {
+            min-height: calc(100vw * 3 + var(--size-photo-gap) * 5);
+        }
 
         &::-webkit-scrollbar{
             width: 1.5rem;
@@ -97,20 +109,24 @@
     &__photo-page {
         scroll-snap-align: start;
         display: grid;
-        grid-template-columns: repeat(2,  var(--size-photo-item));
-        grid-gap: 2rem 2rem;
+        grid-template-columns: repeat(2, var(--size-photo-item-width));
+        grid-template-rows: repeat(2, var(--size-photo-item-height));
+        grid-gap: var(--size-photo-gap) var(--size-photo-gap);
         padding-right: var(--size-photo-item-padding);
         padding-top: 2rem;
         position: relative;
 
         @include respond(gallery) {
-            grid-template-columns: repeat(2,  33rem);
+            grid-template-columns: repeat(2,  var(--size-photo-item-width-for-gallery));
+            grid-template-rows: repeat(2, var(--size-photo-item-height-for-gallery));
         }
         @include respond(below768) {
-            grid-template-columns: repeat(2,  49vw);
+            grid-template-columns: repeat(2,  var(--size-photo-item-width-for-below768));
+            grid-template-rows: repeat(2, var(--size-photo-item-height-for-below768));
         }
         @include respond(upto504) {
             grid-template-columns: 100%;
+            grid-template-rows: repeat(4, calc(100vw * 3 / 4));
         }
         
 
@@ -219,7 +235,7 @@
 
     &__picture {
         width: 100%;
-        background-image: url(../images/price.jpg);
+        background-image: url(images/price.jpg);
         background-size: 200% 300%;
         padding-top: 100%;
         animation: animatePriceBackground 10s linear infinite;

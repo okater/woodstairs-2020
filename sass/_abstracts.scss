@@ -33,9 +33,21 @@
     --color-h2: #222;
 
     // SIZES    
-    --size-photo-container: 71.9rem;
+    --size-photo-container-width: 71.9rem;
     --size-photo-item-padding: 2rem;
-    --size-photo-item: calc((var(--size-photo-container) - var(--size-photo-item-padding)) / 2);
+    --size-photo-gap: 2rem;
+    --size-photo-item-width: calc((var(--size-photo-container-width) - var(--size-photo-item-padding)) / 2);
+    --size-photo-item-height: calc(var(--size-photo-item-width) * 3 / 4);
+    --size-photo-container-min-height: calc(var(--size-photo-item-height) * 2 + var(--size-photo-gap) * 3);
+    // SIZES FOR GALLERY
+    --size-photo-item-width-for-gallery: 33rem;
+    --size-photo-item-height-for-gallery: calc(var(--size-photo-item-width-for-gallery) * 3 / 4);
+    --size-photo-container-min-height-for-gallery: calc(var(--size-photo-item-height-for-gallery) * 2 + var(--size-photo-gap) * 3);
+    // SIZES FOR BELOW768
+    --size-photo-item-width-for-below768: 49vw;
+    --size-photo-item-height-for-below768: calc(var(--size-photo-item-width-for-below768) * 3 / 4);
+    --size-photo-container-min-height-for-below768: calc(var(--size-photo-item-height-for-below768) * 2 + var(--size-photo-gap) * 3);
+
     
     // Z-INDEXes
     --zindex-nav-link: 10;
@@ -57,7 +69,7 @@ $color-grey-dark: grey;
         @media (max-width: 62.5em) { @content };
     }
     @if $breakpoint == tab-land {
-        @media (max-width: 58em) { @content }; //928px
+        @media (max-width: 56.25em) { @content }; //900px
     }
     @if $breakpoint == gallery {
         @media (max-width: 51em) and (min-width: 48.1em) { @content }; // for gallery
