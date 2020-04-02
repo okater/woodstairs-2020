@@ -8,6 +8,14 @@
 
 html {
     font-size: 62.5%; // 1rem = 10px
+
+    @include respond(tab-land) {
+        font-size: 56.25%; // 1 rem = 9px, 9/16 = 56.25%
+    }
+
+    @include respond(upto768) {
+        font-size: 50%; // 1rem = 8px, 8/16 = 50%
+    }
 }
 
 body {
@@ -21,6 +29,7 @@ body {
     background-color: var(--color-background-primary);
     background-size: cover;
     background-repeat: no-repeat;
+    
 }
 
 
@@ -51,4 +60,8 @@ body::before {
     height: 10px;
     box-shadow: 0px 0 10px rgba(0, 0, 0, 0.8);
     z-index: 100;
+}
+
+.margin-top-50 {
+    margin-top: 5rem;
 }

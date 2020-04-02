@@ -14,9 +14,36 @@
 
     --color-border-menu: #793706;
 
+    --color-menu-bg: rgb(236, 229, 201);
     --color-hover-menu: rgb(196, 87, 47);
 
+    --color-cards-bg: rgb(236, 229, 201);
+
+    --color-cards-1-light: #7ed56f;
+    --color-cards-1-dark: #28b485;
+
+    --color-cards-2-light: #ffb900;
+    --color-cards-2-dark: #ff7730;
+
+    --color-cards-3-light: #2998ff;
+    --color-cards-3-dark: #5643fa;
+
+    --color-nav-phone: #222;
+
     --color-h2: #222;
+
+    // SIZES    
+    --size-photo-container: 71.9rem;
+    --size-photo-item-padding: 2rem;
+    --size-photo-item: calc((var(--size-photo-container) - var(--size-photo-item-padding)) / 2);
+    
+    // Z-INDEXes
+    --zindex-nav-link: 10;
+    --zindex-header: 2500;
+    --zindex-separator: var(--zindex-header);
+    --zindex-nav-phone-bg: 1000;
+    --zindex-nav-phone-button: 2000;
+    --zindex-nav-phone-menu: 1500;
 }
 
 $color-primary: rgb(139, 71, 38);
@@ -25,7 +52,44 @@ $color-primary-dark: darken($color-primary, 10%);
 
 $color-grey-dark: grey;
 
-@keyframes animatedPriceBackground {
+@mixin respond($breakpoint) {
+    @if $breakpoint == page-border {
+        @media (max-width: 62.5em) { @content };
+    }
+    @if $breakpoint == tab-land {
+        @media (max-width: 58em) { @content }; //928px
+    }
+    @if $breakpoint == gallery {
+        @media (max-width: 51em) and (min-width: 48.1em) { @content }; // for gallery
+    }
+    @if $breakpoint == upto768 {
+        @media (max-width: 48em) { @content }; //768px
+    }
+    @if $breakpoint == below768 {
+        @media (max-width: 47.9em) { @content }; //766.4px
+    }
+    @if $breakpoint == upto660 {
+        @media (max-width: 41.25em) { @content };
+    }
+    @if $breakpoint == upto580 {
+        @media (max-width: 36.25em) { @content };
+    }
+    @if $breakpoint == upto520 {
+        @media (max-width: 32.5em) { @content };
+    }
+    @if $breakpoint == upto504 {
+        @media (max-width: 31.5em) { @content };
+    }
+    @if $breakpoint == phone360 {
+        @media (max-width: 22.5em) { @content };
+    }
+
+    @if $breakpoint == plus768 {
+        @media (min-width: 48em) { @content }; //768px
+    }
+}
+
+@keyframes animatePriceBackground {
     0% {
         background-position-x: 0%;
     }
@@ -41,4 +105,97 @@ $color-grey-dark: grey;
     100% {
         background-position-x: 0%;
     }
-  }
+}
+
+@keyframes animateHeaderBackground {
+    0% {
+        background-position-x: 0%;
+    }
+    20% {
+        background-position-x: 0%;
+    }
+    25% {
+        background-position-x: calc(100% / 3);
+    }
+    45% {
+        background-position-x: calc(100% / 3);
+    }
+    50% {
+        background-position-x: calc(200% / 3);
+    }
+    70% {
+        background-position-x: calc(200% / 3);
+    }
+    75% {
+        background-position-x: 100%;
+    }
+    95% {
+        background-position-x: 100%;
+    }
+    100% {
+        background-position-x: calc(100% / 3 + 100%);
+    }
+}
+
+@keyframes animateLogo {
+    0% {
+        transform: rotateY(0);
+    }
+    40% {
+        transform: rotateY(0);
+    }
+    50% {
+        transform: rotateY(180deg);
+    }
+    90% {
+        transform: rotateY(180deg);
+    }
+    100% {
+        transform: rotateY(0);
+    }
+}
+
+@keyframes animateMenu {
+    0% {
+        transform: rotateY(180deg);
+    }
+    40% {
+        transform: rotateY(180deg);
+    }
+    50% {
+        transform: rotateY(360deg);
+    }
+    90% {
+        transform: rotateY(360deg);
+    }
+    100% {
+        transform: rotateY(180deg);
+    }
+}
+
+@keyframes animateHeaderPhone {
+    0% {
+        transform: rotate(0);
+        box-shadow: 0 0 0 0 rgba($color: white, $alpha: .3);
+    }
+    45% {
+        transform: rotate(0);
+        box-shadow: 0 0 0 0 rgba($color: white, $alpha: .3);
+    }
+    50% {
+        transform: rotate(30deg);
+        box-shadow: 0 0 0 2rem rgba($color: white, $alpha: .3);
+    }
+    60% {
+        transform: rotate(-30deg);
+        box-shadow: 0 0 0 2rem rgba($color: white, $alpha: .3);
+    }
+    65% {
+        transform: rotate(0);
+        box-shadow: 0 0 0 0 rgba($color: white, $alpha: .3);
+    }
+    100% {
+        transform: rotate(0);
+        box-shadow: 0 0 0 0 rgba($color: white, $alpha: .3);
+    }
+}

@@ -7,7 +7,6 @@
         flex: 1;
         width: 93%;
         padding: 0 2rem;
-        //padding-right: 2rem;
     }
 
     &__photos {
@@ -29,6 +28,10 @@
                     inset 3px 0 5px 0 black,
                     inset 3px 3px 5px 0 black,
                     inset 3px -3px 5px 0 black;
+
+        @include respond(upto660) {
+            display: none;
+        }
 
         & img {
             display: block;
@@ -53,20 +56,24 @@
 .gallery,
 .balusters {
     box-sizing: content-box;
-    //margin-left: 3rem;
 
     &__pages {
         text-align: center;
         overflow: hidden;
-        width: 71.9rem;
+        width: var(--size-photo-container);
         margin: 0 auto;
+
+        @include respond(gallery) {
+            width: 68rem;
+        }
+        @include respond(below768) {
+            width: 100vw;
+        }
+        
     }
 
     &__container {
-        //width: 74rem;
         display: flex;
-        //padding: 0 3rem;
-
         overflow-x: auto;
         scroll-snap-type: x mandatory;
         scroll-behavior: smooth;
@@ -90,12 +97,22 @@
     &__photo-page {
         scroll-snap-align: start;
         display: grid;
-        grid-template-columns: 35rem 35rem;
-        grid-template-rows: min-content min-content;
+        grid-template-columns: repeat(2,  var(--size-photo-item));
         grid-gap: 2rem 2rem;
-        padding-right: 1.9rem;
+        padding-right: var(--size-photo-item-padding);
         padding-top: 2rem;
         position: relative;
+
+        @include respond(gallery) {
+            grid-template-columns: repeat(2,  33rem);
+        }
+        @include respond(below768) {
+            grid-template-columns: repeat(2,  49vw);
+        }
+        @include respond(upto504) {
+            grid-template-columns: 100%;
+        }
+        
 
         &:last-child {
             padding-right: 0;
@@ -104,6 +121,10 @@
         figure {
             width: 100%;
             height: 100%;
+
+            @include respond(upto504) {
+                width: 100vw;
+            }
         }
 
         figure:hover img {
@@ -116,6 +137,18 @@
             height: 80%;
             border-radius: 1rem;
             box-shadow: 0 0 1rem black;
+
+            @include respond(upto504) {
+                position: initial;
+                top: auto;
+                left: auto;
+                margin-top: auto;
+                margin-left: auto;
+                width: 100vw;
+                height: initial;
+                border-radius: initial;
+                box-shadow: none;
+            }
         }
     }
 
@@ -123,6 +156,12 @@
         width: 100%;
         line-height: 0;
         transition: all .5s;
+    }
+
+    &__navigation {
+        @include respond(page-border) {
+            display: none;
+        }
     }
 
     &__navigation-list,
@@ -152,30 +191,60 @@
     width: 93%;
     margin: 0 auto;
 
-    &__content {
-        border: 2px solid grey;
+    &__cards {
         display: flex;
+        flex-wrap: wrap;
+    }
+
+    &__content {
+        width: 30%;
+        min-width: 21rem;
+        display: flex;
+        flex-direction: column;
         margin: 0 auto .8rem;
-        border-radius: 3rem;
-        box-shadow: 0 0 3px black;
+        background-color: var(--color-cards-bg);
+        border-radius: .3rem;
+        box-shadow: 0 .2rem 1rem black;
         overflow: hidden;
+
+
+        @include respond(upto504) {
+            margin-bottom: 2rem;
+        }
+
+        @include respond(phone360) {
+            width: 70%;
+        }
     }
 
     &__picture {
-        width: 28%;
+        width: 100%;
         background-image: url(../images/price.jpg);
         background-size: 200% 300%;
-        padding-top: 28%;
-        animation: animatedPriceBackground 10s linear infinite;
+        padding-top: 100%;
+        animation: animatePriceBackground 10s linear infinite;
         position: relative;
+        clip-path: polygon(0 0, 100% 0, 100% 95%, 0% 100%);
     }
 
     &__description {
-        width: 72%;
-        background-color: rgba($color: grey, $alpha: .5);
+        width: 100%;
+        position: relative;
 
-        p {
-            margin-bottom: 0;
+        ul {
+            list-style: none;
+            width: 90%;
+            margin: 1rem auto 0;
+
+            li {
+                text-align: center;
+                font-size: 1.5rem;
+                padding: 1rem;
+
+                &:not(:last-child) {
+                    border-bottom: 1px solid grey;
+                }
+            }
         }
     }
 
@@ -205,7 +274,7 @@
         display: block;
         position: absolute;
         bottom: 0;
-        right: 0;
+        left: 0;
         width: 6rem;
         border: none;
 
@@ -213,6 +282,19 @@
             width: 100%;
             height: 100%;
         }
+    }
+
+    h3 {
+        position: absolute;
+        width: 60%;
+        min-width: 13.5rem;
+        top: -5rem;
+        right: 0;
+        background-image: linear-gradient(to right bottom, var(--color-cards-1-light), var(--color-cards-1-dark));
+        text-transform: uppercase;
+        line-height: 2rem;
+        color: #eee;
+        padding: .5rem;
     }
 }
 
@@ -231,8 +313,13 @@
         gap: 4rem;
 
         & > div {
-            flex-basis: 45%;
+            //flex-basis: 45%;
+            min-width: 45%;
             display: flex;
+
+            @include respond(upto504) {
+                min-width: 25rem;
+            }
         }
     }
 
