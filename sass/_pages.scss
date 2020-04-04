@@ -263,8 +263,12 @@
 
         ul {
             list-style: none;
-            width: 90%;
+            width: 94%;
             margin: 1rem auto 0;
+
+            @include respond(phone360) {
+                width: 75%;
+            }
 
             li {
                 text-align: center;
@@ -316,7 +320,7 @@
 
     h3 {
         position: absolute;
-        width: 60%;
+        width: 55%;
         min-width: 13.5rem;
         top: -5rem;
         right: 0;
@@ -325,6 +329,10 @@
         line-height: 2rem;
         color: #eee;
         padding: .5rem;
+
+        @include respond(phone360) {
+            width: 45%;
+        }
     }
 }
 
@@ -343,13 +351,16 @@
         gap: 4rem;
 
         & > div {
-            //flex-basis: 45%;
             min-width: 45%;
             display: flex;
 
             @include respond(upto504) {
                 min-width: 25rem;
             }
+        }
+
+        @include respond(phone360) {
+            justify-content: start;
         }
     }
 
