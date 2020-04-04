@@ -321,3 +321,24 @@ address {
 .price__description .landing {
     font-size: 1.4rem;
 }
+
+@include respond(page-border) {
+    .gallery__photo-page-1::after {
+        content: '';
+        position: absolute;
+        top: calc(50% - var(--size-photo-gap));
+        right: 4.5rem;
+        padding: 2rem;
+        border: solid #444;
+        border-width: 2rem 2rem 0 0;
+        transform: rotate(45deg);
+        opacity: .7;
+        animation: animateGalleryArrow 2s linear infinite;
+    }
+}
+
+@include respond(upto504) {
+    .gallery__photo-page-1::after {
+        top: calc(50% - var(--size-photo-gap));
+    }
+}
