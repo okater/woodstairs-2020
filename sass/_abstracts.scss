@@ -38,7 +38,7 @@
     --size-photo-gap: 2rem;
     --size-photo-item-width: calc((var(--size-photo-container-width) - var(--size-photo-item-padding)) / 2);
     --size-photo-item-height: calc(var(--size-photo-item-width) * 3 / 4);
-    --size-photo-container-min-height: calc(var(--size-photo-item-height) * 2 + var(--size-photo-gap) * 3);
+    --size-photo-container-min-height: calc(var(--size-photo-item-height) * 2 + var(--size-photo-gap) * 3.2);
     // SIZES FOR GALLERY
     --size-photo-item-width-for-gallery: 33rem;
     --size-photo-item-height-for-gallery: calc(var(--size-photo-item-width-for-gallery) * 3 / 4);

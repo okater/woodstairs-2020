@@ -174,6 +174,16 @@
     }
 }
 
+.webp .carousel__photos {
+    div {
+        background-image: url(images/gallery.webp) !important;
+    }
+
+    @include respond(upto504) {
+        background-image: url(images/gallery-phone.webp) !important;
+    }
+}
+
 .carousel {
 
     &__photos {
@@ -187,7 +197,7 @@
         );
         background-size: 10px 10px;
 
-        & div {
+        div {
             width: 220px;
             height: 173px;
             background-image: url(images/gallery.jpg);
@@ -241,8 +251,9 @@
 }
 
 .animated-stairs {
+    display: inline-block;
     width: 95%;
-    margin: 3rem 0 0 .5rem;
+    margin: 5rem 0 0 .5rem;
 }
 
 .header a:link,

@@ -26,6 +26,10 @@ p {
     line-height: 2.4rem;
 }
 
+.webp .content {
+    background-image: url(images/wood.webp) !important;
+}
+
 .content {
     display: flex;
     background-image: url(images/wood.jpg);

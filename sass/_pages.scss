@@ -1,3 +1,17 @@
+.webp {
+    .about,
+    .stages,
+    .delivery {
+        &__photos img {
+            background-image: url(images/gallery-right.webp) !important;
+        }
+    }
+
+    .price_picture {
+        background-image: url(images/price.webp) !important;
+    }
+}
+
 .about,
 .stages,
 .delivery {
@@ -33,7 +47,7 @@
             display: none;
         }
 
-        & img {
+        img {
             display: block;
             width: 22rem;
             height: 16.5rem;
