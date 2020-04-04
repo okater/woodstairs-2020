@@ -229,3 +229,12 @@ $color-grey-dark: grey;
         margin-right: 0;
     }
 }
+
+@keyframes animateLangLink {
+    0% {
+        box-shadow: 0 0 .3rem black;
+    }
+    100% {
+        box-shadow: 0 0 2rem black;
+    }
+}

@@ -185,6 +185,7 @@
 }
 
 .carousel {
+    position: relative;
 
     &__photos {
         display: flex;
@@ -340,5 +341,50 @@ address {
 @include respond(upto504) {
     .gallery__photo-page-1::after {
         top: calc(50% - var(--size-photo-gap));
+    }
+}
+
+.lang-mobile,
+.lang-big {
+    margin: 1rem 0 0 0;
+    text-align: center;
+
+    span,
+    a,
+    a:link,
+    a:visited {
+        display: inline-block;
+        margin-right: .5rem;
+        width: 3.5rem;
+        height: 3.5rem;
+        border-radius: 50%;
+        overflow: hidden;
+        box-shadow: 0 0 .2rem black;
+        transition: opacity .2s;
+    }
+
+    a {
+        opacity: .65;
+    }
+
+    a:hover {
+        opacity: 1;
+    }
+
+    svg {
+        height: 100%;
+        width: 100%;
+    }
+}
+
+.lang-mobile {
+    display: none;
+    margin: .3rem;
+    position: absolute;
+    top: 2rem;
+    right: 1rem;
+
+    @include respond(below768) {
+        display: initial;
     }
 }
