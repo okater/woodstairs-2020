@@ -40,7 +40,7 @@ p {
         max-height: 85rem;
     }
     @include respond(tab-land) {
-        max-height: 82rem;
+        max-height: 84rem;
     }
     @include respond(below768) {
         max-height: none;

@@ -155,7 +155,7 @@
 .heading-primary {
     font-family: arial, sans-serif;
     font-weight: bold;
-    font-size: 4rem;
+    font-size: 3.5rem;
     font-style: italic;
     color: var(--color-primary);
     text-shadow: 2px 2px 2px black;
@@ -266,7 +266,6 @@
     display: block;
     text-decoration: none;
     color: currentColor;
-    cursor: default;
     white-space: nowrap;
 }
 
@@ -308,6 +307,7 @@
 
 .footer {
     p {
+        line-height: normal;
         padding: 0;
         margin: 0;
         text-indent: 0;
@@ -334,7 +334,7 @@ address {
         border-width: 2rem 2rem 0 0;
         transform: rotate(45deg);
         opacity: .7;
-        animation: animateGalleryArrow 2s linear infinite;
+        animation: animateGalleryArrow 2.5s linear infinite;
     }
 }
 
